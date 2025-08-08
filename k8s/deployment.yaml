@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: planetary-mesh-runtime
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: planetary-mesh-runtime
+  template:
+    metadata:
+      labels:
+        app: planetary-mesh-runtime
+    spec:
+      containers:
+      - name: planetary-mesh-runtime
+        image: Agentcygroup/planetary-mesh-runtime:latest
+        ports:
+        - containerPort: 8000
